@@ -27,5 +27,11 @@ This application exposes an api which accepts the contact's emailId and phone nu
 - pg-hstore
 - sequelize
 
+### Command to run server
+- node app.js
+
+### Command to run server in debug mode
+- DEBUG=contact* node app.js
+
 
 
