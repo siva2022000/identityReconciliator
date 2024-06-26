@@ -4,9 +4,11 @@ const debug = require("debug")("contact");
 async function getAllContactsLinkedByPrimaryContactId(contactId) {
   //get primary contact
   let primaryContact = await Contact.findOne({ where: { id: contactId } });
+  //get secondary contacts
   let secondaryContacts = await Contact.findAll({
     where: { linkedId: contactId },
   });
+  //prepare response in expected format
   let resp = {
     primaryContatctId: primaryContact.id,
     emails: [],
